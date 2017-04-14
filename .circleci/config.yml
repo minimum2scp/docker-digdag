@@ -4,7 +4,7 @@ jobs:
     working_directory: /tmp/docker-digdag
 
     docker:
-      - image: buildpack-deps:sid-curl
+      - image: ruby:2.4.1
 
     steps:
       - checkout
@@ -32,4 +32,8 @@ jobs:
           command: |
             set -x
             docker build -t minimum2scp/digdag:ci .
+
+      - run: bundle check || bundle install --jobs=4
+
+      - run: DOCKER_IMAGE=minimum2scp/digdag:ci bundle exec rspec spec/digdag/
 
