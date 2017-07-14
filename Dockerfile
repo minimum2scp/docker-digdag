@@ -3,7 +3,7 @@ FROM debian:sid
 ARG DIGDAG_VERSION=0.9.12
 ARG DOCKER_VERSION=17.03.1-ce
 ARG RUBY_VERSION=2.4.1
-ARG BUNDLER_VERSION=1.14.6
+ARG BUNDLER_VERSION=1.15.1
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
