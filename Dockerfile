@@ -1,7 +1,7 @@
 FROM debian:sid
 
 ARG DIGDAG_VERSION=0.9.12
-ARG DOCKER_VERSION=17.03.1-ce
+ARG DOCKER_VERSION=17.06.0-ce
 ARG RUBY_VERSION=2.4.1
 ARG BUNDLER_VERSION=1.14.6
 
@@ -18,7 +18,7 @@ RUN curl -o /usr/local/bin/digdag --create-dirs -L "https://dl.digdag.io/digdag-
     chmod +x /usr/local/bin/digdag
 
 ## install docker
-RUN curl -L -o /tmp/docker-${DOCKER_VERSION}.tgz https://get.docker.com/builds/Linux/x86_64/docker-${DOCKER_VERSION}.tgz && \
+RUN curl -L -o /tmp/docker-${DOCKER_VERSION}.tgz https://download.docker.com/linux/static/stable/x86_64/docker-${DOCKER_VERSION}.tgz && \
     tar -xz -C /tmp -f /tmp/docker-${DOCKER_VERSION}.tgz && \
     mv /tmp/docker/* /usr/bin/ && \
     rm -rf /tmp/docker-${DOCKER_VERSION}.tgz /tmp/docker/
