@@ -28,9 +28,9 @@ RUN git clone https://github.com/rbenv/rbenv       /opt/rbenv && \
     git clone https://github.com/rbenv/ruby-build  /opt/rbenv/plugins/ruby-build && \
     git clone https://github.com/rkh/rbenv-update  /opt/rbenv/plugins/rbenv-update
 ADD etc/profile.d/rbenv.sh /etc/profile.d/rbenv.sh
-RUN bash -lc "rbenv install ${RUBY_VERSION}" && \
+RUN bash -lc "RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install ${RUBY_VERSION}" && \
     bash -lc "rbenv global ${RUBY_VERSION}" && \
-    bash -lc "gem install bundler --version ${BUNDLER_VERSION}" && \
+    bash -lc "gem install bundler --version ${BUNDLER_VERSION} -N" && \
     bash -lc "rbenv rehash"
 
 ENTRYPOINT ["/bin/bash", "-l", "-c"]
