@@ -10,7 +10,7 @@ RUN apt-get update && \
       git curl openssl ca-certificates \
       openjdk-8-jre-headless \
       python \
-      build-essential autoconf bison ca-certificates libgdbm-dev libncursesw5-dev libncurses5-dev libreadline-dev zlib1g-dev libssl1.0-dev libffi-dev libyaml-dev libgmp-dev && \
+      build-essential autoconf bison ca-certificates libgdbm-dev libncursesw5-dev libncurses5-dev libreadline-dev zlib1g-dev libssl-dev libffi-dev libyaml-dev libgmp-dev && \
     apt-get clean
 
 ## install digdag
