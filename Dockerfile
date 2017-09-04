@@ -1,9 +1,10 @@
 FROM debian:sid
 
-ARG DIGDAG_VERSION=0.9.15
-ARG DOCKER_VERSION=17.06.0-ce
+ARG DIGDAG_VERSION=0.9.16
+ARG DOCKER_VERSION=17.06.1-ce
 ARG RUBY_VERSION=2.4.1
-ARG BUNDLER_VERSION=1.15.1
+ARG BUNDLER_VERSION=1.15.4
+ARG RUBYGEMS_VERSION=2.6.13
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
@@ -30,6 +31,7 @@ RUN git clone https://github.com/rbenv/rbenv       /opt/rbenv && \
 ADD etc/profile.d/rbenv.sh /etc/profile.d/rbenv.sh
 RUN bash -lc "RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install ${RUBY_VERSION}" && \
     bash -lc "rbenv global ${RUBY_VERSION}" && \
+    bash -lc "gem update --system ${RUBYGEMS_VERSION}" && \
     bash -lc "gem install bundler --version ${BUNDLER_VERSION} -N" && \
     bash -lc "rbenv rehash"
 
