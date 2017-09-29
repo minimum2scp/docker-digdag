@@ -3,7 +3,7 @@ require "spec_helper"
 describe "ruby" do
   describe command("ruby --version") do
     let(:login_shell){ true }
-    its(:stdout){ should eq "ruby 2.4.1p111 (2017-03-22 revision 58053) [x86_64-linux]\n" }
+    its(:stdout){ should eq "ruby 2.4.2p198 (2017-09-14 revision 59899) [x86_64-linux]\n" }
     its(:exit_status) { should eq 0 }
   end
 
