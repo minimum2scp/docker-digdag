@@ -21,7 +21,7 @@ describe "ruby" do
 
   describe command("gem --version") do
     let(:login_shell){ true }
-    its(:stdout){ should eq "2.6.13\n" }
+    its(:stdout){ should eq "2.6.14\n" }
     its(:exit_status) { should eq 0 }
   end
 end
