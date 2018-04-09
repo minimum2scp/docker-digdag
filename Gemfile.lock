@@ -2,10 +2,10 @@ GEM
   remote: https://rubygems.org/
   specs:
     diff-lcs (1.3)
-    docker-api (1.34.0)
+    docker-api (1.34.2)
       excon (>= 0.47.0)
       multi_json
-    excon (0.60.0)
+    excon (0.62.0)
     multi_json (1.13.1)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -26,14 +26,14 @@ GEM
     rspec-mocks (3.7.0)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
-    rspec-support (3.7.0)
+    rspec-support (3.7.1)
     serverspec (2.41.3)
       multi_json
       rspec (~> 3.0)
       rspec-its
       specinfra (~> 2.72)
     sfl (2.3)
-    specinfra (2.73.1)
+    specinfra (2.73.3)
       net-scp
       net-ssh (>= 2.7, < 5.0)
       net-telnet
@@ -47,4 +47,4 @@ DEPENDENCIES
   serverspec
 
 BUNDLED WITH
-   1.15.1
+   1.16.1
