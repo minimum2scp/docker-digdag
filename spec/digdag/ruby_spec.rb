@@ -9,7 +9,7 @@ describe "ruby" do
 
   describe command("bundle --version") do
     let(:login_shell){ true }
-    its(:stdout){ should eq "Bundler version 1.16.5\n" }
+    its(:stdout){ should eq "Bundler version 1.16.6\n" }
     its(:exit_status) { should eq 0 }
   end
 
