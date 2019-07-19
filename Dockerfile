@@ -32,7 +32,7 @@ ADD etc/profile.d/rbenv.sh /etc/profile.d/rbenv.sh
 RUN bash -lc "RUBY_CONFIGURE_OPTS=--disable-install-doc rbenv install ${RUBY_VERSION}" && \
     bash -lc "rbenv global ${RUBY_VERSION}" && \
     bash -lc "if [ -n \"${RUBYGEMS_VERSION}\" ] ; then gem update --system ${RUBYGEMS_VERSION}; fi" && \
-    bash -lc "gem install bundler --version ${BUNDLER_VERSION} -N" && \
+    bash -lc "gem install bundler --version ${BUNDLER_VERSION} -f -N" && \
     bash -lc "rbenv rehash"
 
 ENTRYPOINT ["/bin/bash", "-l", "-c"]
