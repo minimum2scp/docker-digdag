@@ -26,7 +26,7 @@ GEM
     rspec-mocks (3.8.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.8.0)
-    rspec-support (3.8.2)
+    rspec-support (3.8.3)
     serverspec (2.41.5)
       multi_json
       rspec (~> 3.0)
